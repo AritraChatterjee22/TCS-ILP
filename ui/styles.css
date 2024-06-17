@@ -1,0 +1,82 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling for buttons */
+button {
+    display: block;
+    width: auto; /* Let the button size adjust to content */
+    padding: 10px 20px; /* Adjust padding as needed */
+    margin: 10px auto; /* Center align and adjust spacing between buttons */
+    text-align: center;
+    font-size: 16px;
+    background-color: #dc3545; /* Red color, change as needed */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Center align text */
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+
+label{
+  margin-bottom: 5px;
+}
+
+/* Layout adjustments for forms */
+form {
+    max-width: 600px; /* Adjust maximum width as needed */
+    margin: 20px auto; /* Center align the form and add margin */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style for form input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    padding: 10px;
+    margin-bottom: 12px; /* Adjust spacing between input fields */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 70%; /* Make input fields full width */
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+/* Additional spacing for date and time slots */
+#service-date {
+    margin-bottom: 12px; /* Increase space between date and time slots */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 70%;
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    /* Adjustments for smaller screens */
+    button {
+        font-size: 14px;
+        padding: 8px 16px; /* Reduce padding for smaller buttons */
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea,
+    select {
+        font-size: 14px;
+    }
+}
+

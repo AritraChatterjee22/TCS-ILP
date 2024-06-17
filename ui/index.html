@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Home page -->
+    <div id="home-page">
+        <h1>Welcome to Service Booking</h1>
+        <button onclick="showRegister()">Register</button>
+        <button onclick="showLogin()">Login</button>
+    </div>
+
+    <!-- Register page -->
+    <div id="register-page" style="display:none;">
+        <h1>Register</h1>
+        <form id="register-form">
+            <label for="username">User Name:</label>
+            <input type="text" id="username" name="username" maxlength="50" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" maxlength="30" required><br>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" maxlength="100" required></textarea><br>
+            <label for="contact">Contact Number:</label>
+            <input type="text" id="contact" name="contact" maxlength="10" required><br>
+            <button type="button" onclick="registerUser()">Register</button>
+        </form>
+    </div>
+
+    <!-- Acknowledgment page for registration -->
+    <div id="ack-register-page" style="display:none;">
+        <h1>Registration Successful</h1>
+        <p id="ack-register-message" style="color: green;"></p>
+        <button onclick="showLogin()">Go to Login</button>
+    </div>
+
+    <!-- Login page -->
+    <div id="login-page" style="display:none;">
+        <h1>Login</h1>
+        <form id="login-form">
+            <label for="user-id">User ID:</label>
+            <input type="text" id="user-id" name="user-id" required><br>
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" name="login-password" required><br>
+            <button type="button" onclick="loginUser()">Login</button>
+        </form>
+    </div>
+
+    <!-- Service page -->
+    <div id="service-page" style="display:none;">
+        <h1>Select a Service</h1>
+        <button onclick="showService('AC')">AC & Appliances Repair</button>
+        <button onclick="showService('Cleaning')">House Cleaning</button>
+        <button onclick="showService('Vehicle')">Vehicle Repair Service</button>
+        <button onclick="showService('Pickup')">Product Pickup & Drop Service</button>
+    </div>
+
+    <!-- AC Service page -->
+    <div id="ac-service-page" style="display:none;">
+        <h1>AC & Appliances Repair</h1>
+        <button onclick="showSubService('AC Repair', 'ac')">AC Repair</button>
+        <button onclick="showSubService('TV Repair', 'ac')">TV Repair</button>
+        <button onclick="showSubService('Fridge Repair', 'ac')">Fridge Repair</button>
+        <button onclick="showSubService('Washing Machine Repair', 'ac')">Washing Machine Repair</button>
+    </div>
+
+    <!-- House Cleaning Service page -->
+    <div id="cleaning-service-page" style="display:none;">
+        <h1>House Cleaning</h1>
+        <button onclick="showSubService('1BHK', 'cleaning')">1BHK</button>
+        <button onclick="showSubService('2BHK', 'cleaning')">2BHK</button>
+        <button onclick="showSubService('3BHK', 'cleaning')">3BHK</button>
+        <button onclick="showSubService('Bathroom Cleaning', 'cleaning')">Bathroom Cleaning</button>
+    </div>
+
+    <!-- Vehicle Repair Service page -->
+    <div id="vehicle-service-page" style="display:none;">
+        <h1>Vehicle Repair Service</h1>
+        <button onclick="showSubService('2-Wheeler Repair', 'vehicle')">2-Wheeler Repair</button>
+        <button onclick="showSubService('3-Wheeler Repair', 'vehicle')">3-Wheeler Repair</button>
+    </div>
+
+    <!-- Product Pickup & Drop Service page -->
+    <div id="pickup-service-page" style="display:none;">
+        <h1>Product Pickup & Drop Service</h1>
+        <button onclick="showSubService('Furniture', 'pickup')">Furniture</button>
+        <button onclick="showSubService('Groceries', 'pickup')">Groceries</button>
+        <button onclick="showSubService('Vehicles', 'pickup')">Vehicles</button>
+    </div>
+
+    <!-- Booking form page -->
+    <div id="booking-form-page" style="display:none;">
+        <h1 id="booking-title"></h1>
+        <form id="booking-form">
+            <label for="service-date">Date:</label>
+            <input type="date" id="service-date" name="service-date" required><br>
+            <label for="time-slot">Time Slot:</label>
+            <select id="time-slot" name="time-slot" required>
+                <option value="Morning">Morning (9:00 AM - 12:00 PM)</option>
+                <option value="Afternoon">Afternoon (12:00 PM - 3:00 PM)</option>
+                <option value="Evening">Evening (3:00 PM - 6:00 PM)</option>
+            </select><br>
+            <label for="service-address">Address:</label>
+            <textarea id="service-address" name="service-address" maxlength="100" required></textarea><br>
+            <label for="vendor">Vendor Selection:</label>
+            <select id="vendor" name="vendor" required>
+                <option value="Vendor 1">Vendor 1</option>
+                <option value="Vendor 2">Vendor 2</option>
+                <option value="Vendor 3">Vendor 3</option>
+            </select><br>
+            <label for="amount">Amount:</label>
+            <input type="text" id="amount" name="amount" value="1000" readonly><br>
+            <button type="button" onclick="bookService()">Confirm Booking</button>
+        </form>
+    </div>
+
+    <!-- Booking acknowledgment page -->
+    <div id="ack-booking-page" style="display:none;">
+        <h1>Service Booked Successfully</h1>
+        <p id="ack-booking-message" style="color: green;"></p>
+        <button onclick="showServicePage()">Go to Home Page</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
