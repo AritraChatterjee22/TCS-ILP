@@ -50,17 +50,17 @@ select {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
-    width: 70%; /* Make input fields full width */
+    width: 70%; /* Adjust input fields width */
     box-sizing: border-box; /* Ensure padding and border are included in width */
 }
 
 /* Additional spacing for date and time slots */
 #service-date {
     margin-bottom: 12px; /* Increase space between date and time slots */
-  border: 1px solid #ccc;
+  border: 1px solid #ccc; /* border for service-date*/
   border-radius: 4px;
   font-size: 16px;
-  width: 70%;
+  width: 70%; /* width of date field*/
   box-sizing: border-box;
 }
 
