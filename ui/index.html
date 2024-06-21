@@ -58,6 +58,7 @@
         <button onclick="showService('Cleaning')">House Cleaning</button>
         <button onclick="showService('Vehicle')">Vehicle Repair Service</button>
         <button onclick="showService('Pickup')">Product Pickup & Drop Service</button>
+        <button onclick="showHistory()">View Booking History</button>
     </div>
 
     <!-- AC Service page -->
@@ -123,6 +124,31 @@
     <div id="ack-booking-page" style="display:none;">
         <h1>Service Booked Successfully</h1>
         <p id="ack-booking-message" style="color: green;"></p>
+        <button onclick="showServicePage()">Go to Home Page</button>
+    </div>
+
+    <!-- Booking history page -->
+    <div id="history-page" style="display:none;">
+        <h1>Booking History</h1>
+        <table id="history-table">
+            <thead>
+                <tr>
+                    <th>Service ID</th>
+                    <th>Service</th>
+                    <th>Date</th>
+                    <th>Time Slot</th>
+                    <th>Address</th>
+                    <th>Vendor</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Booking history will be inserted here dynamically -->
+            </tbody>
+        </table>
+        <div id="pagination-controls">
+            <!-- Pagination controls will be inserted here dynamically -->
+        </div>
         <button onclick="showServicePage()">Go to Home Page</button>
     </div>
 
